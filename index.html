@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="Aluno.js" defer></script>
+    <script src="Turma.js" defer></script>
+    <script src="script.js" defer></script>
+    <title>Sistema Escolar</title>
+  </head>
+  <body>
+    <!-- Botões das abas -->
+    <div class="tabs-container">
+      <button
+        class="tab-button active"
+        id="btn-turma"
+        onclick="mostrarAba('turma')"
+      >
+        Cadastrar Turma
+      </button>
+      <button class="tab-button" id="btn-aluno" onclick="mostrarAba('aluno')">
+        Cadastrar Aluno
+      </button>
+      <button class="tab-button" id="btn-listar" onclick="mostrarAba('listar')">
+        Listar Alunos
+      </button>
+    </div>
+
+    <!-- Aba 1: Cadastrar Turma -->
+    <div id="tab-turma" class="tab-content active">
+      <h3>Nova Turma</h3>
+      Professor:
+      <input id="professor" type="text" placeholder="Nome do professor" /> Nome
+      do Curso:
+      <input
+        id="nomeCurso"
+        type="text"
+        placeholder="Ex: ciências e tecnologia ufrn"
+      />
+      <button onclick="salvarTurma()" class="btn-salvar">Salvar Turma</button>
+    </div>
+
+    <!-- Aba 2: Cadastrar Aluno -->
+    <div id="tab-aluno" class="tab-content">
+      <h3>Novo Aluno</h3>
+      <label>Turma:</label>
+      <select id="selectTurma">
+        <option value="">-- Selecione uma turma --</option>
+      </select>
+      Nome do Aluno:
+      <input id="nome" type="text" placeholder="Nome completo" /> Nota 1:
+      <input id="n1" type="number" step="0.1" min="0" max="10" /> Nota 2:
+      <input id="n2" type="number" step="0.1" min="0" max="10" /> Nota 3:
+      <input id="n3" type="number" step="0.1" min="0" max="10" />
+      <button onclick="salvarAluno()" class="btn-salvar">Salvar Aluno</button>
+    </div>
+
+    <!-- Aba 3: Listar Alunos -->
+    <div id="tab-listar" class="tab-content">
+      <h3>Alunos Cadastrados</h3>
+      <div id="listaAlunos"></div>
+    </div>
+  </body>
+</html>
